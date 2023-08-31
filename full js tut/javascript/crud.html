@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud application</title>
+</head>
+<body>
+    <form id="formid">
+        <label for="name">Enter name</label>
+        <input type="text" name="name" id="name" required>
+        <br>
+        <span id="namecon"></span>
+        <br>
+        <br>
+        <label for="username">Enter username</label>
+        <input type="text" name="username" id="username" required>
+        <br>
+        <span id="usercon"></span>
+        <br>
+        <br>
+        <label for="passwd">Enter password</label>
+        <input type="password" name="passwd" id="passwd" required>
+        <br>
+        <span id="passcon"></span>
+        <br>
+        <br>
+        <label for="gender">Male</label>
+        <input type="radio" name="gender" id="male" value="Male">
+        <label for="gender">Female</label>
+        <input type="radio" name="gender" id="female" value="Female">
+        <br>
+        <span id="gendcon"></span>
+        <br>
+        <br>
+        <input type="button" name="Submit" id="submit" value="Submit" onclick="enform()">
+        <button id="updt" onclick="updateform()" hidden>Update</button>
+        
+    </form>
+    <br>
+    <br>
+
+    <table id="tableval" border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Gender</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="tablebody">
+
+        </tbody>
+    </table>
+</body>
+<script src="crud.js"></script>
+</html>
