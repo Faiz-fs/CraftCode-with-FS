@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/index.css'%}">
+</head>
+<body>
+    <h1>Display Student Form</h1>
+
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Rollno</th>
+                    <th>Email</th>
+                    <th>Depatment</th>
+                    <th><button class="create"><a href="create">Add DATA</a></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ppl in data %}
+                <tr>
+                    <td>{{ppl.name}}</td>
+                    <td>{{ppl.rollno}}</td>
+                    <td>{{ppl.email}}</td>
+                    <td>{{ppl.dept}}</td>
+                    <td><button><a href="update/{{ppl.id}}">Update</a></button><button class="delete"><a onclick="conf('{{ppl.id}}');">Delete</a></button></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</body>
+<script type="text/javascript">
+    console.log("hello");
+    function conf(id){
+        var ask=confirm("Do you want to delete the DATA?");
+        if (ask==true){
+            window.location.href="/delete/"+id;
+        }
+    }
+</script>
+</html>
